@@ -17,6 +17,15 @@ body {
   --font-georama: "Georama", sans-serif;
   --font-roboto: "Roboto Mono", monospace;
   --breakpoint-3xl: 1920px;
+  --color-window-close: #ff5f56;
+  --color-window-close-active: #bf4038;
+  --color-window-minimize: #ffbd2e;
+  --color-window-minimize-active: #c99320;
+  --color-window-maximize: #27c93f;
+  --color-window-maximize-active: #1d9930;
+  --spacing-window-maximized-top: 56px;
+  --spacing-window-maximized-side: 16px;
+  --spacing-window-maximized-bottom: 96px;
 }
 
 @utility flex-center {
@@ -101,21 +110,55 @@ body {
   #window-controls {
     @apply flex gap-2;
 
+    button {
+      @apply flex size-4 items-center justify-center rounded-full border border-black/20 cursor-pointer text-black/70;
+
+      svg {
+        @apply size-2.5 opacity-0 transition-opacity;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+      }
+    }
+
+    &:hover {
+      svg {
+        @apply opacity-100;
+      }
+    }
+
     .close {
-      @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+      @apply bg-window-close active:bg-window-close-active;
     }
 
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      @apply bg-window-minimize active:bg-window-minimize-active;
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      @apply bg-window-maximize active:bg-window-maximize-active;
+
+      svg {
+        fill: currentColor;
+        stroke: none;
+      }
     }
   }
 
   #window-header {
     @apply flex items-center justify-between px-4 py-3 rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
+  }
+
+  .window-maximized {
+    position: fixed !important;
+    top: var(--spacing-window-maximized-top) !important;
+    left: var(--spacing-window-maximized-side) !important;
+    right: var(--spacing-window-maximized-side) !important;
+    bottom: var(--spacing-window-maximized-bottom) !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
   }
 
   #safari {
