@@ -1,7 +1,7 @@
 import { techStack } from "#/constants";
 import WindowWrapper from "#/hoc/WindowWrapper";
 import { Check, Flag } from "lucide-react";
-import WindowControls from "./WindowControls";
+import WindowControls from "../components/WindowControls";
 
 const RENDER_TIME_MS = Math.floor(Math.random() * 10) + 1;
 
