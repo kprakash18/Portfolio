@@ -183,24 +183,27 @@ const photosLinks = [
   },
 ];
 
-const gallery = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
-];
+// Gallery items commented out for now:
+// const gallery = [
+//   {
+//     id: 1,
+//     img: "/images/gal1.png",
+//   },
+//   {
+//     id: 2,
+//     img: "/images/gal2.png",
+//   },
+//   {
+//     id: 3,
+//     img: "/images/gal3.png",
+//   },
+//   {
+//     id: 4,
+//     img: "/images/gal4.png",
+//   },
+// ];
+
+const gallery = [];
 
 export {
   navLinks,
@@ -319,7 +322,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/project-3.png",
+          imageUrl: "/images/comingSoon1.png",
         },
       ],
     },
@@ -363,7 +366,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/project-1.png",
+          imageUrl: "/images/comingSoon1.png",
         },
       ],
     },
@@ -416,7 +419,15 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/project-2.png",
+          imageUrl: "/images/DsaTracker0.png",
+          images: [
+            "/images/DsaTracker0.png",
+            "/images/DsaTracker5.png",
+            "/images/DsaTracker1.png",
+            "/images/DsaTracker2.png",
+            "/images/DsaTracker3.png",
+            "/images/DsaTracker4.png",
+          ],
         },
       ],
     },
@@ -469,7 +480,15 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/project-1.png",
+          imageUrl: "/images/AutoCopy0.png",
+          images: [
+            "/images/AutoCopy0.png",
+            "/images/AutoCopy1.jpeg",
+            "/images/AutoCopy2.jpeg",
+            "/images/AutoCopy3.jpeg",
+            "/images/AutoCopy4.jpeg",
+            "/images/AutoCopy5.jpeg",
+          ],
         },
       ],
     },
@@ -513,7 +532,11 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/project-2.png",
+          imageUrl: "/images/keeper1.png",
+          images: [
+            "/images/keeper1.png",
+            "/images/keeper2.png",
+          ],
         },
       ],
     },
@@ -557,7 +580,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/project-3.png",
+          imageUrl: "/images/comingSoon1.png",
         },
       ],
     },
@@ -601,7 +624,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-48 left-8",
-          imageUrl: "/images/wallpaper.png",
+          imageUrl: "/images/comingSoon1.png",
         },
       ],
     },
@@ -650,13 +673,13 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "txt",
       position: "top-60 left-5",
-      subtitle: "Meet the Developer Behind the Code",
+      subtitle: "Full-Stack & Backend Engineer",
       image: "/images/adrian.jpg",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+        "Hey! I'm Prakash 👋 — a Full-Stack & Backend Engineer passionate about designing scalable systems, performant APIs, and intuitive user experiences.",
+        "I specialize in Javascript, React, Node.js, Express, and databases like PostgreSQL, MongoDB, and Neo4j. From building real-time event systems with WebSockets & BullMQ to Chrome extensions used by developers daily, I love solving complex technical challenges.",
+        "I believe great software is built on clean architectures, resilient databases, and thoughtful UX that feels effortless to use.",
+        "When I'm not coding, you'll find me writing technical deep-dives on Medium, exploring new open-source tooling, or optimizing system architectures at 2 AM 🚀",
       ],
     },
   ],
