@@ -32,6 +32,7 @@ const navIcons = [
   {
     id: 4,
     img: "/icons/mode.svg",
+    type: "theme",
   },
 ];
 
@@ -761,6 +762,8 @@ export const TERMINAL_COMMANDS = [
   "whoami",
   "date",
   "history",
+  "theme dark",
+  "theme light",
   "echo",
   "exit",
 ];
@@ -774,6 +777,7 @@ export const TERMINAL_HELP = [
   { cmd: "contact", desc: "Get in touch & social links" },
   { cmd: "resume", desc: "View / download resume" },
   { cmd: "neofetch, prakash", desc: "System info & ASCII logo" },
+  { cmd: "theme <dark|light>", desc: "Toggle dark / light UI theme" },
   { cmd: "sudo hire", desc: "Hire Prakash 🎉" },
   { cmd: "matrix", desc: "Enter digital rain animation" },
   { cmd: "clear, cls", desc: "Clear terminal screen" },

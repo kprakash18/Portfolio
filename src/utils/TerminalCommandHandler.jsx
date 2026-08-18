@@ -9,6 +9,7 @@ import {
   SudoHireView,
 } from "#/windows/TerminalCommands";
 import { triggerConfetti } from "./canvasAnimations";
+import useThemeStore from "#/store/theme";
 
 // Evaluates and routes terminal commands to corresponding views and window actions
 export const runTerminalCommand = (trimmed, ctx) => {
@@ -98,7 +99,19 @@ export const runTerminalCommand = (trimmed, ctx) => {
 
   if (command === "resume") {
     openWindow("resume");
-    return <p className="text-[#00A154] font-semibold text-xs">Opening Resume viewer...</p>;
+    return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Opening Resume viewer...</p>;
+  }
+
+  if (command === "theme") {
+    if (args.toLowerCase() === "dark") {
+      useThemeStore.getState().setTheme("dark");
+      return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Switched to Dark Mode</p>;
+    }
+    if (args.toLowerCase() === "light") {
+      useThemeStore.getState().setTheme("light");
+      return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Switched to Light Mode</p>;
+    }
+    return <p className="text-amber-500 text-xs">Usage: theme &lt;dark | light&gt;</p>;
   }
 
   const commandMap = {
@@ -125,10 +138,10 @@ export const runTerminalCommand = (trimmed, ctx) => {
   };
 
   return commandMap[command] ?? (
-    <p className="text-red-400 text-xs">
+    <p className="text-red-400 dark:text-red-300 text-xs">
       zsh: command not found: {trimmed}. Type{" "}
       <span
-        className="text-[#00A154] font-bold underline cursor-pointer"
+        className="text-[#00A154] dark:text-[#00ff66] font-bold underline cursor-pointer"
         onClick={() => handleCommand?.("help")}
       >
         help

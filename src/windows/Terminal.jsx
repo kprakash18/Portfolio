@@ -4,6 +4,7 @@ import WindowWrapper from "#/hoc/WindowWrapper";
 import WindowControls from "#/components/WindowControls";
 import useWindowStore from "#/store/window";
 import useLocationStore from "#/store/location";
+import useThemeStore from "#/store/theme";
 import { TechStackView } from "./TerminalCommands";
 import { startMatrixRain } from "#/utils/canvasAnimations";
 import { runTerminalCommand } from "#/utils/TerminalCommandHandler";
@@ -15,6 +16,10 @@ const getInitialEntries = () => [
 const Terminal = () => {
   const { openWindow, closeWindow } = useWindowStore();
   const { setActiveLocation } = useLocationStore();
+  const { theme } = useThemeStore();
+  const isDark = theme === "dark";
+  const promptSymbol = isDark ? "❯ " : " @prakash % ";
+
   const [inputVal, setInputVal] = useState("");
   const [historyIdx, setHistoryIdx] = useState(-1);
   const [cmdHistory, setCmdHistory] = useState([]);
@@ -38,7 +43,8 @@ const Terminal = () => {
   const handleCommand = (raw) => {
     const trimmed = raw.trim();
     if (!trimmed) return;
-    setCmdHistory((prev) => [...prev, trimmed]);
+    const newHistory = [...cmdHistory, trimmed];
+    setCmdHistory(newHistory);
     setHistoryIdx(-1);
     setInputVal("");
 
@@ -50,7 +56,7 @@ const Terminal = () => {
       setEntries,
       setMatrixActive,
       confettiCanvas: confettiCanvasRef.current,
-      cmdHistory,
+      cmdHistory: newHistory,
       getInitialEntries,
       handleCommand,
     });
@@ -80,8 +86,13 @@ const Terminal = () => {
       setInputVal(idx < cmdHistory.length ? cmdHistory[idx] : "");
     } else if (e.key === "Tab") {
       e.preventDefault();
-      const match = TERMINAL_COMMANDS.find((c) => c.startsWith(inputVal.toLowerCase().trim()));
-      if (match) setInputVal(match);
+      const search = inputVal.toLowerCase().trim();
+      const matches = TERMINAL_COMMANDS.filter((c) => c.startsWith(search));
+      if (matches.length > 0) {
+        const currentIdx = matches.indexOf(inputVal.toLowerCase().trim());
+        const nextMatch = matches[(currentIdx + 1) % matches.length];
+        setInputVal(nextMatch);
+      }
     }
   };
 
@@ -92,7 +103,11 @@ const Terminal = () => {
       <div
         ref={containerRef}
         className="techstack terminal-body"
-        onClick={() => inputRef.current?.focus()}
+        onClick={() => {
+          if (!window.getSelection()?.toString()) {
+            inputRef.current?.focus();
+          }
+        }}
       >
         <canvas ref={confettiCanvasRef} className="pointer-events-none absolute inset-0 z-30 size-full" />
 
@@ -113,25 +128,28 @@ const Terminal = () => {
 
           {entries.map((entry) => (
             <div key={entry.id} className="space-y-1">
-              <p className="select-none">
-                <span className="terminal-prompt"> @prakash % </span>
-                <span className="font-normal select-text">{entry.command}</span>
+              <p className="select-none flex items-center gap-1.5 font-roboto">
+                <span className="terminal-prompt">{promptSymbol}</span>
+                <span className={`font-normal select-text ${isDark ? "text-[#00ff66]" : "text-gray-900"}`}>
+                  {entry.command}
+                </span>
               </p>
               {entry.output && <div className="mt-1">{entry.output}</div>}
             </div>
           ))}
         </div>
 
-        <div className="flex items-center gap-1 mt-3">
-          <span className="terminal-prompt"> @prakash % </span>
+        <div className="flex items-center gap-1.5 mt-3 font-roboto">
+          <span className="terminal-prompt">{promptSymbol}</span>
           <input
             ref={inputRef}
             type="text"
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Type 'help', 'projects', 'skills'..."
+            placeholder="Type 'help', 'projects', 'theme dark'..."
             className="terminal-input"
+            aria-label="Terminal command input"
             autoFocus
             spellCheck={false}
             autoComplete="off"
