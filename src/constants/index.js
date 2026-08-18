@@ -206,7 +206,10 @@ const photosLinks = [
 
 const gallery = [];
 
+const EMAIL = "kethavathprakash18@gmail.com";
+
 export {
+  EMAIL,
   navLinks,
   navIcons,
   dockApps,
@@ -750,6 +753,8 @@ export const TERMINAL_COMMANDS = [
   "about",
   "bio",
   "contact",
+  "email",
+  "mail",
   "resume",
   "blogs",
   "articles",
@@ -775,6 +780,7 @@ export const TERMINAL_HELP = [
   { cmd: "about, bio", desc: "Read developer background" },
   { cmd: "blogs, articles", desc: "Read Medium articles" },
   { cmd: "contact", desc: "Get in touch & social links" },
+  { cmd: "email, mail", desc: "Copy email address to clipboard" },
   { cmd: "resume", desc: "View / download resume" },
   { cmd: "neofetch, prakash", desc: "System info & ASCII logo" },
   { cmd: "theme <dark|light>", desc: "Toggle dark / light UI theme" },
