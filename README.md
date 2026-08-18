@@ -12,6 +12,10 @@
 
 [Explore Live Demo](https://white-pebble-08561b600.7.azurestaticapps.net) • [Report Issue](https://github.com/kprakash18/Portfolio/issues) • [Connect on LinkedIn](https://www.linkedin.com/in/k-prakash-420b06330)
 
+<br />
+
+<img src="./image.png" alt="macOS Portfolio Desktop UI Demo" width="100%" style="border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);" />
+
 </div>
 
 ---
@@ -19,6 +23,43 @@
 ## 🌟 Overview
 
 This portfolio simulates the full macOS operating system experience in the browser. Built with **React 19**, **GSAP**, **Tailwind CSS**, and **Zustand**, it features floating draggable windows, a dynamic magnification Dock, an interactive zsh terminal, and live desktop applications.
+
+---
+
+## 📸 Interactive App Previews & Demos
+
+<div align="center">
+
+### 1. 🖥️ Interactive Shell Terminal (`Terminal.app`)
+*Full-featured interactive terminal with command autocompletion, command history, and custom outputs.*
+
+| Technical Skills (`skills` / `show tech stacks`) | Command Directory (`help`) |
+| :---: | :---: |
+| <img src="./image3.png" width="440" alt="Terminal Skills View" /> | <img src="./image4.png" width="440" alt="Terminal Help View" /> |
+
+<br />
+
+| Project Browser (`projects`) |
+| :---: |
+| <img src="./image5.png" width="500" alt="Terminal Projects View" /> |
+
+<br />
+
+### 2. 📂 macOS File Manager (`Finder.app`)
+*Interactive file explorer with sidebar navigation, project inspections, and direct live demo launching.*
+
+| All Projects Directory | Project Contents & Asset Inspection |
+| :---: | :---: |
+| <img src="./image6.png" width="440" alt="Finder Projects Grid View" /> | <img src="./image7.png" width="440" alt="Finder Inside Project Folder" /> |
+
+<br />
+
+### 3. 🌐 Developer Blog Browser (`Safari.app`)
+*Curated engineering articles and technical deep-dives inside a customized Safari browser.*
+
+<img src="./image2.png" width="850" alt="Safari Developer Blog Window Demo" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.25);" />
+
+</div>
 
 ---
 
