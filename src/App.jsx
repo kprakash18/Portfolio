@@ -1,19 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import useThemeStore from "./store/theme";
-
 import { Navbar, Welcome, Dock, Home } from "./components";
 import {
   Terminal,
   Safari,
-  Resume,
   Finder,
   Text,
   Image,
   Contact,
   Photos,
 } from "./windows";
+
+const Resume = lazy(() => import("./windows/Resume"));
 
 gsap.registerPlugin(Draggable);
 
@@ -35,7 +35,9 @@ const App = () => {
 
       <Terminal />
       <Safari />
-      <Resume />
+      <Suspense fallback={null}>
+        <Resume />
+      </Suspense>
       <Finder />
       <Text />
       <Image />

@@ -26,10 +26,13 @@ const WindowWrapper = (Component, windowKey) => {
 
     useLayoutEffect(() => {
       const el = windowRef.current;
-      if (!el) return;
-      el.style.display = isOpen && !isMinimized ? "block" : "none";
-      if (!isMaximized) gsap.set(el, { clearProps: "x,y,scale,transform" });
-    }, [isOpen, isMinimized, isMaximized]);
+      if (el) el.style.display = isOpen && !isMinimized ? "block" : "none";
+    }, [isOpen, isMinimized]);
+
+    useLayoutEffect(() => {
+      const el = windowRef.current;
+      if (el && !isMaximized) gsap.set(el, { clearProps: "x,y,scale,transform" });
+    }, [isMaximized]);
 
     return (
       <section
