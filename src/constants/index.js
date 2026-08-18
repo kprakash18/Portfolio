@@ -77,25 +77,19 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
+    date: "Aug 2, 2026",
+    title:
+      "I Thought Backend Engineering Was About Code Until Production Proved Me Wrong",
+    image: "/images/blog1.png",
+    link: "https://medium.com/@prakashk23/you-finally-finished-the-feature-you-had-been-working-on-for-two-weeks-the-6837d762258d?sharedUserId=prakashk23",
+  },
+  {
+    id: 2,
     date: "July 27, 2026",
     title:
       "JavaScript: Solving the Mystery of JavaScript Functions",
     image: "/images/JSblog.png",
     link: "https://webdeveloper4004.blogspot.com/",
-  },
-  {
-    id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
-  },
-  {
-    id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
   },
 ];
 
@@ -286,14 +280,102 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 2: DSA Tracker
+    // ▶ Project 2: BleachVerse Platform
+    {
+      id: 9,
+      name: "BleachVerse Platform",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-8 left-52",
+      windowPosition: "top-[10vh] left-10",
+      children: [
+        {
+          id: 1,
+          name: "BleachVerse.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-8",
+          subtitle: "Full-Stack Media Platform",
+          description: [
+            "BleachVerse is a dedicated content and media streaming platform with rich metadata querying and robust backend architecture.",
+            "Built with Node.js, Express, JavaScript, and TypeScript.",
+            "Engineered for high performance, caching, and clean RESTful API endpoint structures.",
+          ],
+        },
+        {
+          id: 2,
+          name: "GitHub Repo",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://github.com/kprakash18/BleachVerse-backend",
+          position: "top-5 left-48",
+        },
+        {
+          id: 3,
+          name: "Preview.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-48 left-8",
+          imageUrl: "/images/project-3.png",
+        },
+      ],
+    },
+
+    // ▶ Project 3: RBAC MERN Team Management
+    {
+      id: 11,
+      name: "RBAC Team Management",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-8 left-96",
+      windowPosition: "top-[15vh] left-16",
+      children: [
+        {
+          id: 1,
+          name: "RBAC Architecture.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-8",
+          subtitle: "Role-Based Access Control System",
+          description: [
+            "Enterprise-grade Role-Based Access Control (RBAC) user and team management platform.",
+            "Built with MongoDB, Express, React, and Node.js (MERN) with secure JWT tokens and encrypted credentials.",
+            "Allows administrators to define roles, assign granular permissions, and manage organization hierarchy safely.",
+          ],
+        },
+        {
+          id: 2,
+          name: "GitHub Repo",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://github.com/kprakash18/rbac-mern-team-management",
+          position: "top-5 left-48",
+        },
+        {
+          id: 3,
+          name: "RBAC-Dashboard.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-48 left-8",
+          imageUrl: "/images/project-1.png",
+        },
+      ],
+    },
+
+    // ▶ Project 4: DSA Tracker Extension
     {
       id: 6,
       name: "DSA Tracker Extension",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-52",
-      windowPosition: "top-[15vh] left-10",
+      position: "top-52 left-8",
+      windowPosition: "top-[15vh] left-15",
       children: [
         {
           id: 1,
@@ -339,14 +421,14 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 3: Autocopy Extension
+    // ▶ Project 5: Autocopy Extension
     {
       id: 7,
       name: "Autocopy Extension",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-96",
-      windowPosition: "top-[25vh] left-15",
+      position: "top-52 left-52",
+      windowPosition: "top-[20vh] left-20",
       children: [
         {
           id: 1,
@@ -392,94 +474,6 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 4: 3D Portfolio
-    {
-      id: 8,
-      name: "3D Interactive Portfolio",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-52 left-8",
-      windowPosition: "top-[10vh] left-12",
-      children: [
-        {
-          id: 1,
-          name: "3D Portfolio.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-5 left-8",
-          subtitle: "Three.js & WebGL 3D Portfolio",
-          description: [
-            "An immersive 3D interactive portfolio built using Three.js, React, and TypeScript.",
-            "Showcases 3D interactive model rendering, smooth camera physics, custom shaders, and responsive WebGL design.",
-            "Designed to offer visitors a captivating visual experience with seamless 60fps animations.",
-          ],
-        },
-        {
-          id: 2,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/kprakash18/3D-Portfolio",
-          position: "top-5 left-48",
-        },
-        {
-          id: 3,
-          name: "3D-Showcase.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-48 left-8",
-          imageUrl: "/images/wallpaper.png",
-        },
-      ],
-    },
-
-    // ▶ Project 5: BleachVerse Backend
-    {
-      id: 9,
-      name: "BleachVerse Platform",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-52 left-52",
-      windowPosition: "top-[20vh] left-20",
-      children: [
-        {
-          id: 1,
-          name: "BleachVerse.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-5 left-8",
-          subtitle: "Full-Stack Media Platform",
-          description: [
-            "BleachVerse is a dedicated content and media streaming platform with rich metadata querying and robust backend architecture.",
-            "Built with Node.js, Express, JavaScript, and TypeScript.",
-            "Engineered for high performance, caching, and clean RESTful API endpoint structures.",
-          ],
-        },
-        {
-          id: 2,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/kprakash18/BleachVerse-backend",
-          position: "top-5 left-48",
-        },
-        {
-          id: 3,
-          name: "Preview.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-48 left-8",
-          imageUrl: "/images/project-3.png",
-        },
-      ],
-    },
-
     // ▶ Project 6: Keeper Note App
     {
       id: 10,
@@ -487,7 +481,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-52 left-96",
-      windowPosition: "top-[30vh] left-24",
+      windowPosition: "top-[25vh] left-24",
       children: [
         {
           id: 1,
@@ -524,57 +518,13 @@ const WORK_LOCATION = {
       ],
     },
 
-    // ▶ Project 7: RBAC MERN Team Management
-    {
-      id: 11,
-      name: "RBAC Team Management",
-      icon: "/images/folder.png",
-      kind: "folder",
-      position: "top-96 left-8",
-      windowPosition: "top-[15vh] left-16",
-      children: [
-        {
-          id: 1,
-          name: "RBAC Architecture.txt",
-          icon: "/images/txt.png",
-          kind: "file",
-          fileType: "txt",
-          position: "top-5 left-8",
-          subtitle: "Role-Based Access Control System",
-          description: [
-            "Enterprise-grade Role-Based Access Control (RBAC) user and team management platform.",
-            "Built with MongoDB, Express, React, and Node.js (MERN) with secure JWT tokens and encrypted credentials.",
-            "Allows administrators to define roles, assign granular permissions, and manage organization hierarchy safely.",
-          ],
-        },
-        {
-          id: 2,
-          name: "GitHub Repo",
-          icon: "/images/github.png",
-          kind: "file",
-          fileType: "url",
-          href: "https://github.com/kprakash18/rbac-mern-team-management",
-          position: "top-5 left-48",
-        },
-        {
-          id: 3,
-          name: "RBAC-Dashboard.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-48 left-8",
-          imageUrl: "/images/project-1.png",
-        },
-      ],
-    },
-
-    // ▶ Project 8: Customer Segmentation ML
+    // ▶ Project 7: Customer Segmentation ML
     {
       id: 12,
       name: "Customer Segmentation ML",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-96 left-52",
+      position: "top-96 left-8",
       windowPosition: "top-[25vh] left-28",
       children: [
         {
@@ -608,6 +558,50 @@ const WORK_LOCATION = {
           fileType: "img",
           position: "top-48 left-8",
           imageUrl: "/images/project-3.png",
+        },
+      ],
+    },
+
+    // ▶ Project 8: 3D Interactive Portfolio
+    {
+      id: 8,
+      name: "3D Interactive Portfolio",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-96 left-52",
+      windowPosition: "top-[10vh] left-12",
+      children: [
+        {
+          id: 1,
+          name: "3D Portfolio.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-8",
+          subtitle: "Three.js & WebGL 3D Portfolio",
+          description: [
+            "An immersive 3D interactive portfolio built using Three.js, React, and TypeScript.",
+            "Showcases 3D interactive model rendering, smooth camera physics, custom shaders, and responsive WebGL design.",
+            "Designed to offer visitors a captivating visual experience with seamless 60fps animations.",
+          ],
+        },
+        {
+          id: 2,
+          name: "GitHub Repo",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://github.com/kprakash18/3D-Portfolio",
+          position: "top-5 left-48",
+        },
+        {
+          id: 3,
+          name: "3D-Showcase.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-48 left-8",
+          imageUrl: "/images/wallpaper.png",
         },
       ],
     },
