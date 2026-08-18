@@ -230,7 +230,7 @@ const WORK_LOCATION = {
       name: "Indian Microbiome Database",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-8",
+      position: "top-[4.5rem] left-8",
       windowPosition: "top-[5vh] left-5",
       children: [
         {
@@ -290,7 +290,7 @@ const WORK_LOCATION = {
       name: "BleachVerse Platform",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-52",
+      position: "top-[13rem] left-28",
       windowPosition: "top-[10vh] left-10",
       children: [
         {
@@ -334,7 +334,7 @@ const WORK_LOCATION = {
       name: "RBAC Team Management",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-96",
+      position: "top-[21.5rem] left-8",
       windowPosition: "top-[15vh] left-16",
       children: [
         {
@@ -378,7 +378,7 @@ const WORK_LOCATION = {
       name: "DSA Tracker Extension",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 left-8",
+      position: "top-[4.5rem] right-10",
       windowPosition: "top-[15vh] left-15",
       children: [
         {
@@ -439,7 +439,7 @@ const WORK_LOCATION = {
       name: "Autocopy Extension",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 left-52",
+      position: "top-[13rem] right-32",
       windowPosition: "top-[20vh] left-20",
       children: [
         {
@@ -500,7 +500,7 @@ const WORK_LOCATION = {
       name: "Keeper Note App",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 left-96",
+      position: "top-[30rem] left-28",
       windowPosition: "top-[25vh] left-24",
       children: [
         {
@@ -548,7 +548,7 @@ const WORK_LOCATION = {
       name: "Customer Segmentation ML",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-96 left-8",
+      position: "top-[21.5rem] right-10",
       windowPosition: "top-[25vh] left-28",
       children: [
         {
@@ -592,7 +592,7 @@ const WORK_LOCATION = {
       name: "3D Interactive Portfolio",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-96 left-52",
+      position: "top-[30rem] right-32",
       windowPosition: "top-[10vh] left-12",
       children: [
         {

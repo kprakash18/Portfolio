@@ -104,12 +104,12 @@ export const runTerminalCommand = (trimmed, ctx) => {
 
   if (command === "theme") {
     if (args.toLowerCase() === "dark") {
-      useThemeStore.getState().setTheme("dark");
-      return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Switched to Dark Mode</p>;
+      useThemeStore.getState().setTerminalTheme("dark");
+      return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Switched Terminal to Dark Mode</p>;
     }
     if (args.toLowerCase() === "light") {
-      useThemeStore.getState().setTheme("light");
-      return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Switched to Light Mode</p>;
+      useThemeStore.getState().setTerminalTheme("light");
+      return <p className="text-[#00A154] dark:text-[#00ff66] font-semibold text-xs">Switched Terminal to Light Mode</p>;
     }
     return <p className="text-amber-500 text-xs">Usage: theme &lt;dark | light&gt;</p>;
   }

@@ -11,18 +11,11 @@ const Finder = () => {
   const { openWindow } = useWindowStore();
 
   const openItem = (item) => {
-    if (item.kind === "folder") {
-      setActiveLocation(item);
-    } else if (item.kind === "file") {
-      if (item.fileType === "txt") {
-        openWindow("txtfile", item);
-      } else if (item.fileType === "img") {
-        openWindow("imgfile", item);
-      } else if (item.fileType === "pdf") {
-        openWindow("resume", item);
-      } else if (item.href) {
-        window.open(item.href, "_blank");
-      }
+    if (item.kind === "folder") setActiveLocation(item);
+    else if (item.href) window.open(item.href, "_blank", "noopener,noreferrer");
+    else if (item.fileType) {
+      const winKey = { txt: "txtfile", img: "imgfile", pdf: "resume" }[item.fileType];
+      if (winKey) openWindow(winKey, item);
     }
   };
 
@@ -51,7 +44,7 @@ const Finder = () => {
         <Search className="icon" />
       </div>
 
-      <div className="bg-white flex h-full">
+      <div className="bg-white dark:bg-[#121212] flex h-full">
         <div className="sidebar">
           {renderList("Favorites", Object.values(locations))}
           {renderList("My Projects", locations.work.children)}

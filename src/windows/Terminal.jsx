@@ -16,8 +16,8 @@ const getInitialEntries = () => [
 const Terminal = () => {
   const { openWindow, closeWindow } = useWindowStore();
   const { setActiveLocation } = useLocationStore();
-  const { theme } = useThemeStore();
-  const isDark = theme === "dark";
+  const { terminalTheme } = useThemeStore();
+  const isDark = terminalTheme === "dark";
   const promptSymbol = isDark ? "❯ " : " @prakash % ";
 
   const [inputVal, setInputVal] = useState("");
@@ -164,7 +164,13 @@ const WrappedTerminal = WindowWrapper(Terminal, "terminal");
 
 const TerminalWindow = () => {
   const isOpen = useWindowStore((state) => state.windows.terminal?.isOpen);
-  return <WrappedTerminal key={isOpen ? "open" : "closed"} />;
+  const terminalTheme = useThemeStore((state) => state.terminalTheme);
+  return (
+    <WrappedTerminal
+      key={isOpen ? "open" : "closed"}
+      className={terminalTheme === "dark" ? "dark-terminal" : "light-terminal"}
+    />
+  );
 };
 
-export default TerminalWindow ;
+export default TerminalWindow;

@@ -1,21 +1,19 @@
 import { create } from "zustand";
 
+const syncDom = (dark) => typeof document !== "undefined" && document.documentElement.classList.toggle("dark", dark);
+
 const useThemeStore = create((set) => ({
-  theme: "dark",
-  setTheme: (theme) => {
-    if (typeof document !== "undefined") {
-      document.documentElement.classList.toggle("dark", theme === "dark");
-    }
-    set({ theme });
-  },
-  toggleTheme: () =>
-    set((state) => {
-      const next = state.theme === "dark" ? "light" : "dark";
-      if (typeof document !== "undefined") {
-        document.documentElement.classList.toggle("dark", next === "dark");
-      }
-      return { theme: next };
-    }),
+  theme: "light",
+  setTheme: (theme) => { syncDom(theme === "dark"); set({ theme }); },
+  toggleTheme: () => set((s) => {
+    const next = s.theme === "dark" ? "light" : "dark";
+    syncDom(next === "dark");
+    return { theme: next };
+  }),
+
+  terminalTheme: "dark",
+  setTerminalTheme: (terminalTheme) => set({ terminalTheme }),
+  toggleTerminalTheme: () => set((s) => ({ terminalTheme: s.terminalTheme === "dark" ? "light" : "dark" })),
 }));
 
 export default useThemeStore;
