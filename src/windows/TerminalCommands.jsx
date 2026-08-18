@@ -1,4 +1,5 @@
-import { techStack, blogPosts, locations, socials, TERMINAL_HELP, NEOFETCH_INFO } from "#/constants";
+import { useState } from "react";
+import { techStack, blogPosts, locations, socials, EMAIL, TERMINAL_HELP, NEOFETCH_INFO } from "#/constants";
 import { Check, Flag, Sparkles, ExternalLink } from "lucide-react";
 
 export const TechStackView = () => (
@@ -18,28 +19,31 @@ export const TechStackView = () => (
       <p className="terminal-body-text flex items-center gap-1.5"><Flag size={15} className="terminal-body-text" />Render Time: 6ms</p>
     </div>
     <p className="text-xs terminal-subtext mt-4 select-none">
-      Type <span className="terminal-accent font-semibold">help</span> to view commands, <span className="terminal-accent font-semibold">projects</span> to browse work, or <span className="terminal-accent font-semibold">theme dark</span> to switch theme.
+      Type <span className="terminal-accent font-semibold">'projects'</span> (or <span className="terminal-accent font-semibold">'1' - '8'</span>) to view projects, or <span className="terminal-accent font-semibold">'help'</span> for all commands.
     </p>
   </div>
 );
 
 export const HelpView = () => (
-  <div className="space-y-2 text-xs py-2">
-    <div className="label"><p className="w-36">Command</p><p>Description</p></div>
-    <div className="content py-3 my-2 border-y border-dashed space-y-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+  <div className="space-y-1.5 py-1 text-xs content border-y border-dashed my-2">
+    <p className="terminal-accent font-semibold mb-2">Available Terminal Commands:</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
       {TERMINAL_HELP.map(({ cmd, desc }) => (
-        <div key={cmd}><span className="terminal-accent font-semibold">{cmd}</span> : <span className="terminal-body-text">{desc}</span></div>
+        <div key={cmd} className="flex items-start gap-2">
+          <span className="terminal-accent font-bold w-36 shrink-0">{cmd}</span>
+          <span className="terminal-muted">{desc}</span>
+        </div>
       ))}
     </div>
   </div>
 );
 
 export const ProjectsView = ({ projects }) => (
-  <div className="space-y-2 py-2 text-xs">
-    <div className="label"><p className="w-36">Number</p><p>Project Name & Details</p></div>
-    <ul className="content py-3 my-2 border-y border-dashed space-y-2.5">
+  <div className="space-y-2 text-xs py-1 content border-y border-dashed my-2">
+    <p className="terminal-accent font-semibold mb-1">Featured Projects ({projects.length}):</p>
+    <ul className="space-y-2">
       {projects.map((proj, idx) => (
-        <li key={proj.id} className="flex items-start gap-3">
+        <li key={proj.id} className="flex items-start gap-2.5">
           <Check className="check shrink-0 mt-0.5" size={18} />
           <div>
             <div className="flex items-center gap-2">
@@ -70,9 +74,9 @@ export const AboutView = () => (
 );
 
 export const BlogsView = () => (
-  <div className="space-y-2 py-2 text-xs">
-    <div className="label"><p className="w-36">Publication</p><p>Title & Link</p></div>
-    <ul className="content py-3 my-2 border-y border-dashed space-y-3">
+  <div className="space-y-2 text-xs py-1 content border-y border-dashed my-2">
+    <p className="terminal-accent font-semibold mb-1">Published Articles ({blogPosts.length}):</p>
+    <ul className="space-y-2">
       {blogPosts.map((post) => (
         <li key={post.id} className="space-y-1">
           <div className="flex items-center gap-2">
@@ -91,17 +95,38 @@ export const BlogsView = () => (
   </div>
 );
 
-export const ContactView = () => (
-  <div className="space-y-1.5 py-2 text-xs content border-y border-dashed my-2">
-    <p className="terminal-accent font-semibold">Opening Contact window...</p>
-    <p className="terminal-body-text">Email: <a href="mailto:kethavathprakash18@gmail.com" className="terminal-accent underline">kethavathprakash18@gmail.com</a></p>
-    <div className="flex gap-4 pt-1">
-      {socials.map((s) => (
-        <a key={s.id} href={s.link} target="_blank" rel="noreferrer" className="terminal-accent hover:underline">{s.text}</a>
-      ))}
+export const ContactView = () => {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard?.writeText(EMAIL);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="space-y-1.5 py-2 text-xs content border-y border-dashed my-2">
+      <p className="terminal-accent font-semibold">Opening Contact window...</p>
+      <div className="flex items-center gap-2">
+        <p className="terminal-body-text">
+          Email: <a href={`mailto:${EMAIL}`} className="terminal-accent underline">{EMAIL}</a>
+        </p>
+        <button
+          type="button"
+          onClick={copyEmail}
+          className="text-[11px] font-semibold px-2 py-0.5 rounded border border-[#00A154] terminal-accent hover:bg-[#00A154]/10 transition-colors cursor-pointer"
+        >
+          {copied ? "✓ Copied!" : "Copy"}
+        </button>
+      </div>
+      <div className="flex gap-4 pt-1">
+        {socials.map((s) => (
+          <a key={s.id} href={s.link} target="_blank" rel="noreferrer" className="terminal-accent hover:underline">{s.text}</a>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const NeofetchView = () => (
   <div className="flex flex-col sm:flex-row gap-6 items-start py-2 text-xs content border-y border-dashed my-2">

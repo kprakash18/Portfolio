@@ -10,6 +10,7 @@ import {
 } from "#/windows/TerminalCommands";
 import { triggerConfetti } from "./canvasAnimations";
 import useThemeStore from "#/store/theme";
+import { EMAIL } from "#/constants";
 
 // Evaluates and routes terminal commands to corresponding views and window actions
 export const runTerminalCommand = (trimmed, ctx) => {
@@ -90,6 +91,16 @@ export const runTerminalCommand = (trimmed, ctx) => {
       return <p className="text-[#00A154] font-semibold text-xs">✓ Opened {args.toLowerCase()} window.</p>;
     }
     return <p className="text-red-400 text-xs">Target '{args}' not found. Type 'projects' or 'help'.</p>;
+  }
+
+  if (command === "email" || command === "mail") {
+    navigator.clipboard?.writeText(EMAIL);
+    return (
+      <div className="space-y-1 text-xs py-1">
+        <p className="text-[#00A154] font-semibold">✓ Copied '{EMAIL}' to clipboard!</p>
+        <p className="text-gray-400 text-[11px]">You can paste it directly into your email client.</p>
+      </div>
+    );
   }
 
   if (command === "contact") {
