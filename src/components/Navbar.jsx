@@ -1,8 +1,19 @@
-import { navIcons, navLinks } from "#/constants";
+import { navIcons, navLinks, locations } from "#/constants";
 import dayjs from "dayjs";
 import useWindowStore from "#/store/window";
+import useLocationStore from "#/store/location";
+
 const Navbar = ()=>{
    const { openWindow } = useWindowStore() ; 
+   const { setActiveLocation } = useLocationStore() ;
+
+   const handleNavClick = (type) => {
+     if (type === "finder") {
+       setActiveLocation(locations.work);
+     }
+     openWindow(type);
+   };
+
     return(
       <nav>
         {/* left side div */}
@@ -12,7 +23,7 @@ const Navbar = ()=>{
               <ul>
                  {navLinks.map( ({id, name, type}) =>(
                  <li 
-                   key={id} onClick={()=> openWindow(type)}><p>{name}</p>
+                   key={id} onClick={()=> handleNavClick(type)}><p>{name}</p>
                 </li>
                 ))}
               </ul>
