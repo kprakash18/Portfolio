@@ -6,18 +6,13 @@ import useWindowStore from "#/store/window";
 const Photos = () => {
   const { openWindow } = useWindowStore();
 
-  const handleImageClick = (item) => {
-    openWindow("imgfile", {
-      name: `Photo ${item.id}`,
-      imageUrl: item.img,
-    });
-  };
+  const handleImageClick = ({ id, img }) => openWindow("imgfile", { name: `Photo ${id}`, imageUrl: img });
 
   return (
     <>
       <WindowControls target="photos" title="Photos" />
 
-      <div className="flex bg-white h-full">
+      <div className="flex bg-white dark:bg-[#121212] h-full">
         <div className="sidebar">
           <h2>Library</h2>
           <ul>

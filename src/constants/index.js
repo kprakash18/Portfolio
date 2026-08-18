@@ -32,6 +32,7 @@ const navIcons = [
   {
     id: 4,
     img: "/icons/mode.svg",
+    type: "theme",
   },
 ];
 
@@ -229,7 +230,7 @@ const WORK_LOCATION = {
       name: "Indian Microbiome Database",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-8",
+      position: "top-[4.5rem] left-8",
       windowPosition: "top-[5vh] left-5",
       children: [
         {
@@ -289,7 +290,7 @@ const WORK_LOCATION = {
       name: "BleachVerse Platform",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-52",
+      position: "top-[13rem] left-28",
       windowPosition: "top-[10vh] left-10",
       children: [
         {
@@ -333,7 +334,7 @@ const WORK_LOCATION = {
       name: "RBAC Team Management",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-8 left-96",
+      position: "top-[21.5rem] left-8",
       windowPosition: "top-[15vh] left-16",
       children: [
         {
@@ -377,7 +378,7 @@ const WORK_LOCATION = {
       name: "DSA Tracker Extension",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 left-8",
+      position: "top-[4.5rem] right-10",
       windowPosition: "top-[15vh] left-15",
       children: [
         {
@@ -438,7 +439,7 @@ const WORK_LOCATION = {
       name: "Autocopy Extension",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 left-52",
+      position: "top-[13rem] right-32",
       windowPosition: "top-[20vh] left-20",
       children: [
         {
@@ -499,7 +500,7 @@ const WORK_LOCATION = {
       name: "Keeper Note App",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 left-96",
+      position: "top-[30rem] left-28",
       windowPosition: "top-[25vh] left-24",
       children: [
         {
@@ -547,7 +548,7 @@ const WORK_LOCATION = {
       name: "Customer Segmentation ML",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-96 left-8",
+      position: "top-[21.5rem] right-10",
       windowPosition: "top-[25vh] left-28",
       children: [
         {
@@ -591,7 +592,7 @@ const WORK_LOCATION = {
       name: "3D Interactive Portfolio",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-96 left-52",
+      position: "top-[30rem] right-32",
       windowPosition: "top-[10vh] left-12",
       children: [
         {
@@ -737,6 +738,61 @@ export const locations = {
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
+};
+
+export const TERMINAL_COMMANDS = [
+  "help",
+  "skills",
+  "techstack",
+  "projects",
+  "work",
+  "open",
+  "about",
+  "bio",
+  "contact",
+  "resume",
+  "blogs",
+  "articles",
+  "neofetch",
+  "prakash",
+  "sudo hire",
+  "matrix",
+  "clear",
+  "cls",
+  "whoami",
+  "date",
+  "history",
+  "theme dark",
+  "theme light",
+  "echo",
+  "exit",
+];
+
+export const TERMINAL_HELP = [
+  { cmd: "skills, techstack", desc: "View technical skills" },
+  { cmd: "projects, work", desc: "Browse all 8 projects" },
+  { cmd: "1 - 8, open <num>", desc: "Open project directly in Finder" },
+  { cmd: "about, bio", desc: "Read developer background" },
+  { cmd: "blogs, articles", desc: "Read Medium articles" },
+  { cmd: "contact", desc: "Get in touch & social links" },
+  { cmd: "resume", desc: "View / download resume" },
+  { cmd: "neofetch, prakash", desc: "System info & ASCII logo" },
+  { cmd: "theme <dark|light>", desc: "Toggle dark / light UI theme" },
+  { cmd: "sudo hire", desc: "Hire Prakash 🎉" },
+  { cmd: "matrix", desc: "Enter digital rain animation" },
+  { cmd: "clear, cls", desc: "Clear terminal screen" },
+  { cmd: "date, whoami, history", desc: "Utility commands" },
+];
+
+export const NEOFETCH_INFO = {
+  os: "PrakashOS 15.0 Sequoia",
+  host: "MacBook Pro (Apple Silicon)",
+  kernel: "React 19 + GSAP + Vite 8",
+  role: "Full-Stack & Backend Engineer",
+  shell: "zsh 5.9",
+  terminal: "PrakashOS Terminal.app",
+  memory: "64 GB Unified RAM",
+  palette: ["#000000", "#ff5f56", "#ffbd2e", "#00A154", "#38bdf8", "#c084fc", "#ffffff"],
 };
 
 const INITIAL_Z_INDEX = 1000;

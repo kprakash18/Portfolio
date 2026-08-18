@@ -9,31 +9,17 @@ import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
 const Home = () => {
-  const { setActiveLocation } = useLocationStore();
-  const { openWindow } = useWindowStore();
-
-  const projects = locations.work.children ?? [];
-
-  useGSAP(() => {
-    Draggable.create(".folder-draggable", {
-      type: "x,y",
-      edgeResistance: 0.65,
-    });
-  }, []);
-
-  const handleFolderClick = (project) => {
-    setActiveLocation(project);
-    openWindow("finder");
-  };
+  const { setActiveLocation } = useLocationStore(), { openWindow } = useWindowStore();
+  useGSAP(() => { Draggable.create(".folder-draggable", { type: "x,y", edgeResistance: 0.65 }); }, []);
 
   return (
     <section id="home">
       <ul>
-        {projects.map((project) => (
+        {(locations.work.children ?? []).map((project) => (
           <li
             key={project.id}
             className={clsx("folder-draggable group cursor-pointer", project.position)}
-            onClick={() => handleFolderClick(project)}
+            onClick={() => { setActiveLocation(project); openWindow("finder"); }}
           >
             <img src={project.icon} alt={project.name} />
             <p>{project.name}</p>
