@@ -18,18 +18,18 @@ const Terminal = ()=>{
 
 
           <div className="label">
-            <p className="w-32">Category</p>
+            <p className="w-36">Category</p>
             <p>Technologies</p>
          </div>
 
          <ul className="content">
             {techStack.map(({category, items}) =>(
                 <li key={category} className="flex items-center">
-                     <Check className="check" size={20} />
-                     <h3>{category}</h3>
-                     <ul>
+                     <Check className="check shrink-0" size={20} />
+                     <h3 className="shrink-0">{category}</h3>
+                     <ul className="flex items-center gap-2 whitespace-nowrap">
                         {items.map((item,index) =>(
-                            <li key={item}>
+                            <li key={item} className="whitespace-nowrap">
                                 {item}{index < items.length -1 ? "," : ""}
                             </li>
                         ))}
@@ -42,7 +42,7 @@ const Terminal = ()=>{
          <div className="footnote">
             <p>
                 <Check size= {20} />
-                6 of 6 stacks loaded successfully(100%)
+                {techStack.length} of {techStack.length} stacks loaded successfully(100%)
             </p>
 
             <p className="text-black">
