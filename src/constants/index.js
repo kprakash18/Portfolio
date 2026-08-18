@@ -739,6 +739,58 @@ export const locations = {
   trash: TRASH_LOCATION,
 };
 
+export const TERMINAL_COMMANDS = [
+  "help",
+  "skills",
+  "techstack",
+  "projects",
+  "work",
+  "open",
+  "about",
+  "bio",
+  "contact",
+  "resume",
+  "blogs",
+  "articles",
+  "neofetch",
+  "prakash",
+  "sudo hire",
+  "matrix",
+  "clear",
+  "cls",
+  "whoami",
+  "date",
+  "history",
+  "echo",
+  "exit",
+];
+
+export const TERMINAL_HELP = [
+  { cmd: "skills, techstack", desc: "View technical skills" },
+  { cmd: "projects, work", desc: "Browse all 8 projects" },
+  { cmd: "1 - 8, open <num>", desc: "Open project directly in Finder" },
+  { cmd: "about, bio", desc: "Read developer background" },
+  { cmd: "blogs, articles", desc: "Read Medium articles" },
+  { cmd: "contact", desc: "Get in touch & social links" },
+  { cmd: "resume", desc: "View / download resume" },
+  { cmd: "neofetch, prakash", desc: "System info & ASCII logo" },
+  { cmd: "sudo hire", desc: "Hire Prakash 🎉" },
+  { cmd: "matrix", desc: "Enter digital rain animation" },
+  { cmd: "clear, cls", desc: "Clear terminal screen" },
+  { cmd: "date, whoami, history", desc: "Utility commands" },
+];
+
+export const NEOFETCH_INFO = {
+  os: "PrakashOS 15.0 Sequoia",
+  host: "MacBook Pro (Apple Silicon)",
+  kernel: "React 19 + GSAP + Vite 8",
+  role: "Full-Stack & Backend Engineer",
+  shell: "zsh 5.9",
+  terminal: "PrakashOS Terminal.app",
+  memory: "64 GB Unified RAM",
+  palette: ["#000000", "#ff5f56", "#ffbd2e", "#00A154", "#38bdf8", "#c084fc", "#ffffff"],
+};
+
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
