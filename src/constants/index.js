@@ -77,11 +77,11 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "July 27, 2026",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+      "JavaScript: Solving the Mystery of JavaScript Functions",
+    image: "/images/JSblog.png",
+    link: "https://webdeveloper4004.blogspot.com/",
   },
   {
     id: 2,
@@ -118,7 +118,7 @@ const techStack = [
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["PostgreSQL", "MongoDB"],
   },
   {
     category: "Dev Tools",
