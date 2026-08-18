@@ -21,16 +21,11 @@ const Contact = () => {
           <img src="/images/adrian.jpg" alt="Profile" className="w-20 rounded-full object-cover" />
           <div>
             <h3>Let's Connect</h3>
-            <p className="text-sm text-gray-500 font-medium">
-              Got an idea, a bug to squash, or just want to talk tech? I'm in.
-            </p>
-            <button
-              type="button"
-              onClick={copyEmail}
-              className="mt-2 text-xs font-semibold px-3 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white transition-colors cursor-pointer"
-            >
-              {copied ? "✓ Copied Email!" : "Copy Email"}
-            </button>
+            <p className="text-sm text-gray-500 font-medium">Got an idea, a bug to squash, or just want to talk tech? I'm in.</p>
+            <div className="flex items-center gap-2 mt-2">
+              <a href={`mailto:${EMAIL}`} className="text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium">{EMAIL}</a>
+              <button type="button" onClick={copyEmail} className="text-xs font-semibold px-2 py-0.5 rounded bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">{copied ? "✓ Copied!" : "Copy"}</button>
+            </div>
           </div>
         </div>
 
@@ -50,5 +45,4 @@ const Contact = () => {
 };
 
 const ContactWindow = WindowWrapper(Contact, "contact");
-
 export default ContactWindow;

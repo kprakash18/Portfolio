@@ -149,9 +149,18 @@ export const NeofetchView = () => (
 );
 
 export const SudoHireView = () => (
-  <div className="p-3 border border-dashed border-[#00A154] rounded-lg text-xs space-y-1 text-[#00A154] my-2 bg-emerald-500/5">
-    <p className="font-bold flex items-center gap-1.5"><Sparkles size={16} /> CONGRATULATIONS! You've unlocked the hire command!</p>
-    <p className="terminal-body-text">Prakash is ready to build exceptional software with your team. The Contact window has been opened for you!</p>
+  <div className="p-3.5 border border-dashed border-[#00A154] rounded-lg text-xs space-y-2 text-[#00A154] my-2 bg-emerald-500/5">
+    <p className="font-bold flex items-center gap-1.5 text-sm">
+      <Sparkles size={16} /> [sudo] password verified: Root privilege granted! 🚀
+    </p>
+    <div className="space-y-1 terminal-body-text leading-relaxed">
+      <p>
+        <span className="terminal-accent font-semibold">⚠️ WARNING:</span> Hiring Prakash may cause a sudden collapse in bug backlogs, zero-downtime deployments, and an alarming rate of coffee consumption.
+      </p>
+      <p className="terminal-subtext text-[11px]">
+        Status: <span className="terminal-accent font-semibold">Offer letter accepted in advance 😉</span> — Contact window has been launched!
+      </p>
+    </div>
   </div>
 );
 
