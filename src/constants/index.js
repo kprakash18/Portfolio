@@ -101,28 +101,32 @@ const blogPosts = [
 
 const techStack = [
   {
+    category: "Languages",
+    items: ["JavaScript", "TypeScript", "Python", "SQL", "C++"],
+  },
+  {
     category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    items: ["React.js", "TypeScript", "Redux", "Zustand"],
   },
   {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
-  },
-  {
-    category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    category: "UI & Styling",
+    items: ["Tailwind","CSS" ,"shadcn/ui", "Lucide React"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express","BullMQ","WebSockets" ,"REST APIs"],
   },
   {
     category: "Database",
-    items: ["PostgreSQL", "MongoDB"],
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Neo4j", "Redis"],
+  },
+  {
+    category: "AI & ML",
+    items: ["Python", "Scikit-Learn", "PCA", "K-Means"],
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Docker","Bash"],
   },
 ];
 
@@ -258,7 +262,7 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/Indian-Microbiome-Database",
@@ -317,7 +321,7 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/DSA-tacker",
@@ -370,7 +374,7 @@ const WORK_LOCATION = {
         {
           id: 3,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/Autocopy-extension",
@@ -414,7 +418,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/3D-Portfolio",
@@ -458,7 +462,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/BleachVerse-backend",
@@ -502,7 +506,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/Keeper",
@@ -546,7 +550,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/rbac-mern-team-management",
@@ -590,7 +594,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "GitHub Repo",
-          icon: "/icons/github.svg",
+          icon: "/images/github.png",
           kind: "file",
           fileType: "url",
           href: "https://github.com/kprakash18/Customer-Segmentation-ML",
